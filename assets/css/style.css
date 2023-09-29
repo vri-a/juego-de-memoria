@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Satisfy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    padding-top: 3.5em;
+    font-family: 'Poppins', sans-serif;
+    color: slateblue;
+    font-weight: 300;
+    letter-spacing: 1px;
+    
+}
+
+.title {
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 2em;
+    border: 2px solid slateblue; 
+}
+
+button {
+    cursor: pointer;
+}
+
+.board > .card {
+    outline: solid;
+    outline-color: slateblue;
+    border: 0;
+    background-color: #fff;
+    font-size: 1.5em;
+    position: relative;
+    perspective: 1800px; 
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.card__back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+} 
+
+.rotate {
+    transform: rotateY(180deg); 
+}   
+
+.info {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 8%;
+    margin: auto;
+    margin-bottom: 2em;
+
+} 
+
+.start, .restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 100%; 
+    margin-left: .5em;
+    border: 2px solid slateblue;
+    border-radius: .2em;
+    letter-spacing: 2px;
+    background-color: slateblue;
+    color: #fff; 
+}
+
+.restart {
+    display: none; 
+}
+
+
+.message {
+    margin: auto;
+    text-align: center;
+    display: none;
+    transition: display 2s;
+}
+
+
+@media (min-width:650px) {
+    .board {
+        width: 40%;
+        height: 50%;
+
+    }
+
+    .info {
+        width: 40%;
+    }
+
+}
+
+@media (min-width:950px) {
+    .board {
+        height: 60%;
+
+    }
+}
